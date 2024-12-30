@@ -1,0 +1,18 @@
+<h3>Form</h3>
+<label for="name">Name: </label>
+<input id="name" type="text" [formControl]="name">
+<p>Value: {{ name.value }}</p>
+<p>value: {{ onChangeInputValue() }}</p>
+<button type="button" (click)="onValueChange()">Update Name</button>
+
+<form [formGroup]="profileForm">
+  <label for="first-name">First Name: </label>
+  <input id="first-name" type="text" formControlName="firstName">
+  <label for="last-name">Last Name: </label>
+  <input id="last-name" type="text" formControlName="lastName">
+  <label for="ocupation">Ocupation: </label>
+  <input id="ocupation" type="text" formControlName="ocupation">
+  <p>Complete the form to enable button.</p>
+  <button type="submit" [disabled]="!profileForm.valid" (click)="onClick()" (click)="updateProfile()">Submit</button>
+</form>
+<p>{{ showData() }}</p>

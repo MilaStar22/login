@@ -1,0 +1,55 @@
+.drop-container {
+  display: flex;
+  flex-direction: row;
+  // flex-wrap: wrap;
+  overflow: auto;
+  gap: 5px;
+  width: 250px;
+  height: 350px;
+  padding: 10px;
+  background: #f8f9fa;
+  border: 1px solid #ccc;
+}
+
+.draggable {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  background: #007bff;
+  color: #fff;
+  text-align: center;
+  border-radius: 4px;
+  cursor: grab;
+}
+
+.draggable.dragging {
+  opacity: 0.5;
+}
+
+.placeholder {
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px dashed rgba(0, 0, 0, 0.3);
+  height: 50px;
+  /* Default height for buttons */
+}
+
+.cdk-drag-preview {
+  background-color: yellow;
+}
+
+.cdk-drag-preview {
+  box-sizing: border-box;
+  border-radius: 4px;
+  width: 87%; // you can add in px also 
+  height: 11%; // this line added
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+    0 8px 10px 1px rgba(0, 0, 0, 0.14),
+    0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+button {
+  &:clicked {
+    background-color: #007bff;
+  }
+}

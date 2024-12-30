@@ -1,0 +1,23 @@
+<div 
+  cdkDropList 
+  #dropList="cdkDropList" 
+  [cdkDropListConnectedTo]="[dropList]" 
+  (cdkDropListDropped)="onDrop($event)"
+  cdkDropListOrientation="horizontal"
+  class="drop-container"
+>
+  <div
+    *ngFor="let item of items; let i = index"
+    cdkDrag
+    [cdkDragData]="item"
+    (cdkDragEntered)="onDragEntered($event, i)"
+    (cdkDragExited)="onDragExited()"
+    [ngClass]="{ 'dragging': item.isDragging }"
+    [style.width.px]="item.width"
+    [style.height.px]="item.height"
+    class="draggable"
+  >
+    {{ item.label }}
+  </div>
+  <div *ngIf="showPlaceholder" [style.width.px]="placeholderWidth" class="placeholder"></div>
+</div>

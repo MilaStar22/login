@@ -1,0 +1,31 @@
+<div cdkDropList
+     #dropList="cdkDropList"
+     class="drop-list"
+     cdkDropListOrientation="horizontal"
+     (cdkDropListDropped)="onDrop($event)">
+  <button *ngFor="let button of buttons"
+          cdkDrag
+          class="drag-item"
+          (cdkDragMoved)="onDragMoved($event)">
+    {{ button.label }}
+  </button>
+</div>
+
+<button (click)="sendText()">Send Message</button>
+
+<br>
+<p>Use EventEmitter:</p>
+
+<button (click)="decrement()">-</button>
+{{ count }}
+<button (click)="increment()">+</button>
+
+<br>
+<p>Use signals:</p>
+<button (click)="decrementSignal()">-</button>
+{{ countSignal() }}
+<button (click)="incrementSignal()">+</button>
+<p>Writable signal: {{ writableSignal() }}</p>
+
+<br>
+
